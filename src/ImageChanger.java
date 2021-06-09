@@ -107,7 +107,14 @@ public class ImageChanger {
 		this.lessRed(x);
 		this.lessGreen(x);
 		this.lessBlue(x);
-		
+	}
+	public void grey() {
+		for(int i = 0; i < h; i++) {
+			for(int j = 0; j < w; j++) {
+				int b = (pixels[i][j].getRed() + pixels[i][j].getGreen() + pixels[i][j].getBlue())/3;
+				pixels[i][j].changeColors(b,b,b);
+			}
+		}
 	}
 	
 	
