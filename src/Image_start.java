@@ -20,7 +20,8 @@ public class Image_start {
 		System.out.println("	9: Less green");
 		System.out.println("	10: Less blue");
 		System.out.println("	11: Less all");
-		System.out.println("	12: Less all");
+		System.out.println("	12: Grey");
+		System.out.println("	13: Black/White");
 		
 		int in = read.nextInt();
 		
@@ -52,6 +53,8 @@ public class Image_start {
 			change.lessAll(read.nextInt());
 		}else if(in == 12) {
 			change.grey();
+		}else if(in == 13) {
+			change.black();
 		}else {
 			
 		}

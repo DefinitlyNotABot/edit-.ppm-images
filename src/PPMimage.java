@@ -108,6 +108,7 @@ public class PPMimage {
 				System.out.println(pixels[i][j].getRed());
 			}
 		}
+		write.exit();
 		System.out.println("Done :)");
 		
 		

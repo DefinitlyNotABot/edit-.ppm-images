@@ -23,6 +23,9 @@ public class PPMwriter {
 	public void writeln(int w, int w2, int w3) {
 		printing.println("" + w + " " + w2 + " " + w3 + " ");
 	}
+	public void exit() {
+		printing.close();
+	}
 	
 	
 

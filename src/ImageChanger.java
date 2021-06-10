@@ -16,7 +16,7 @@ public class ImageChanger {
 	public void deleteRed() {
 		for(int i = 0; i < h; i++) {
 			for(int j = 0; j < w; j++) {
-				pixels[i][j].setBlue(0);
+				pixels[i][j].setRed(0);
 			}
 		}
 	}
@@ -82,24 +82,27 @@ public class ImageChanger {
 	public void lessRed(int x) {
 		for(int i = 0; i < h; i++) {
 			for(int j = 0; j < w; j++) {
-				int r = pixels[i][j].getRed();
-				pixels[i][j].setRed(r*(x/100));
+				double y = x;
+				double r = pixels[i][j].getRed();
+				pixels[i][j].setRed((int)(r*(y/100)));
 			}
 		}
 	}
 	public void lessGreen(int x) {
 		for(int i = 0; i < h; i++) {
 			for(int j = 0; j < w; j++) {
-				int g = pixels[i][j].getGreen();
-				pixels[i][j].setRed(g*(x/100));
+				double y = x;
+				double g = pixels[i][j].getGreen();
+				pixels[i][j].setGreen((int)(g*(y/100)));
 			}
 		}
 	}
 	public void lessBlue(int x) {
 		for(int i = 0; i < h; i++) {
 			for(int j = 0; j < w; j++) {
-				int b = pixels[i][j].getBlue();
-				pixels[i][j].setBlue(b*(x/100));
+				double y = x;
+				double b = pixels[i][j].getBlue();
+				pixels[i][j].setBlue((int)(b*(y/100)));
 			}
 		}
 	}
@@ -113,6 +116,21 @@ public class ImageChanger {
 			for(int j = 0; j < w; j++) {
 				int b = (pixels[i][j].getRed() + pixels[i][j].getGreen() + pixels[i][j].getBlue())/3;
 				pixels[i][j].changeColors(b,b,b);
+			}
+		}
+	}
+	public void black() {
+		for(int i = 0; i < h; i++) {
+			for(int j = 0; j < w; j++) {
+				double b = (pixels[i][j].getRed() + pixels[i][j].getGreen() + pixels[i][j].getBlue())/3;
+				double d = this.d;
+				if(b>((d*3)/2)) {
+					pixels[i][j].changeColors(this.d,this.d,this.d);
+				}
+				if(b<((d*3)/2)) {
+					pixels[i][j].changeColors(0,0,0);
+				}
+				
 			}
 		}
 	}
