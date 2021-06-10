@@ -124,10 +124,10 @@ public class ImageChanger {
 			for(int j = 0; j < w; j++) {
 				double b = (pixels[i][j].getRed() + pixels[i][j].getGreen() + pixels[i][j].getBlue())/3;
 				double d = this.d;
-				if(b>((d*3)/2)) {
+				if(b>d/2) {
 					pixels[i][j].changeColors(this.d,this.d,this.d);
 				}
-				if(b<((d*3)/2)) {
+				if(b<d/2) {
 					pixels[i][j].changeColors(0,0,0);
 				}
 				
